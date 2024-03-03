@@ -18,6 +18,7 @@ if [ -f eduroam.crt.pem ] || [ -f eduroam.key.pem ] || [ -f eduroam.8021x ]; the
 	exit 1
 fi
 
+# TODO: test if `EAP-TLS-ClientKeyBundle` and `EAP-TLS-ClientKeyPassphrase` work without the need to convert the .p12 file
 # iwd does uses client key and cert in .pem format
 openssl pkcs12 -in "$CERT_FILE" -out eduroam.crt.pem -clcerts -nokeys -passin pass:"$CERT_PASS" -legacy
 openssl pkcs12 -in "$CERT_FILE" -out eduroam.key.pem -nocerts -nodes -passin pass:"$CERT_PASS" -legacy

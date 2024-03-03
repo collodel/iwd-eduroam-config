@@ -35,5 +35,5 @@
 
 ## Notes:
 - The main problem in configuring `eduroam` with TLS arises when using the `.p12` file, that contains at the same time both the user certificate and the private key.
-This script mainly extracts these two different files from the `.p12` file in order for iwd to be able to use them separately.
+This script mainly extracts these two different files from the `.p12` file in order for iwd to be able to use them separately (TODO: there seems to exist `EAP-TLS-ClientKeyBundle` as an option [here](https://iwd.wiki.kernel.org/networkconfigurationsettings) that takes the `.p12` file directly).
 - The eduroam configuration with TTLS seems to work only with `polimi-protected`, so I think this is the best way to configure `eduroam` at Polimi.
